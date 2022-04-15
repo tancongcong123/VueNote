@@ -22,3 +22,8 @@ npm run lint
 
 ### Customize configuration
 See [Configuration Reference](https://cli.vuejs.org/config/).
+npm i axios
+npm i vue-router@3
+npm i vuex
+npm i nanoid
+npm i pubsub-js
