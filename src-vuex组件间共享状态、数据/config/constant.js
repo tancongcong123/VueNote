@@ -1,0 +1,1 @@
+const GET_STU_NAME = 'get_stu_name'
