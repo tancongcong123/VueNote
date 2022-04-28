@@ -310,3 +310,15 @@
             1 若对数据进行比较，会产生没有必要的真实DOM更新，导致效率低
             2 若数据中存在输入，会导致数据错乱
     $nextTick
+    函数防抖和节流（解决函数卡顿问题）
+        现象：事件频繁触发，每次触发函数都要执行，如果事件太短会导致卡顿
+        解决：
+            节流：在规定的间隔时间范围内不会重复触发回调，只有大于这个时间间隔才会触发回调，把频繁触发变为少量触发
+            防抖：前面的触发都取消，最后一次执行，在规定时间之后才会触发，也就是说连续多次触发也只执行一次
+            插件：lodash 封装了函数的防抖和节流的业务【闭包+延时器】
+                防抖 _.debounce(func, time),
+                节流 _.throttle(func, [wait=0], [options=])
+    模拟数据 插件 mockjs
+    图片懒加载插件 vue-lazyload
+        https://www.npmjs.com/package/vue-lazyload
+    https://github.com/PanJiaChen/vue-admin-template.git

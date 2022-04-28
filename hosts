@@ -1,0 +1,75 @@
+meng
+192.168.36.55      jyt.dev.kehou.com
+192.168.36.55      login.dev.kehou.com
+192.168.36.55      pmi.dev.kehou.com
+192.168.36.55      dev.kehou.com
+192.168.36.55      www.dev.kehou.com
+192.168.36.55      exer.dev.kehou.com
+192.168.36.55      center.dev.kehou.com
+192.168.36.55      vod.dev.kehou.com
+192.168.36.55      cms.dev.kehou.com
+192.168.36.55      sms.dev.kehou.com
+192.168.36.55      tms.dev.kehou.com
+192.168.36.55      m.dev.kehou.com
+192.168.36.55      stat.dev.kehou.com
+192.168.36.55      kehou.dev.kehou.com
+192.168.36.55      mykehou.dev.kehou.com
+192.168.36.55      storage.dev.kehou.com
+192.168.36.55      live.dev.kehou.com
+
+wang
+192.168.36.54      jyt.dev.kehou.com
+192.168.36.54      login.dev.kehou.com
+192.168.36.54      pmi.dev.kehou.com
+192.168.36.54      dev.kehou.com
+192.168.36.54      www.dev.kehou.com
+192.168.36.54      exer.dev.kehou.com
+192.168.36.54      center.dev.kehou.com
+192.168.36.54      vod.dev.kehou.com
+192.168.36.54      cms.dev.kehou.com
+192.168.36.54      sms.dev.kehou.com
+192.168.36.54      tms.dev.kehou.com
+192.168.36.54      m.dev.kehou.com
+192.168.36.54      stat.dev.kehou.com
+192.168.36.54      kehou.dev.kehou.com
+192.168.36.54      mykehou.dev.kehou.com
+192.168.36.54      storage.dev.kehou.com
+192.168.36.54      live.dev.kehou.com
+
+# 课后网H5-dev
+192.168.36.60 m.dev.kehou.com
+192.168.36.60 dev.kehou.com
+192.168.36.60 jyt.dev.kehou.com
+192.168.36.60 center.dev.kehou.com
+192.168.36.60 exer.dev.kehou.com
+192.168.36.60 330.dev.kehou.com
+192.168.36.60 login.dev.kehou.com
+192.168.36.60 vod.dev.kehou.com
+192.168.36.60 order.dev.kehou.com
+192.168.36.60 live.dev.kehou.com
+192.168.36.60 cms.dev.kehou.com
+192.168.36.60 tms.dev.kehou.com
+192.168.36.60 storage.dev.kehou.com
+192.168.36.60 file.dev.kehou.com
+192.168.36.60 mykehou.dev.kehou.com
+192.168.36.60 heyz.330.dev.kehou.com
+192.168.36.51 m.dev.netstudy.com
+#192.168.36.56 m.yflb.kehou.com
+#对应nginx upstream配置
+#汪瀛波
+#192.168.36.54 api.kehou.com
+#孟泽盛
+192.168.36.55 api.kehou.com
+#欧萃琳
+#192.168.36.65 api.kehou.com
+#李瑞青
+#192.168.36.67 api.kehou.com
+#洪旭
+#192.168.36.63 api.kehou.com
+#王力越
+#192.168.36.70 api.kehou.com
+#朱宇冬
+#192.168.36.53 api.kehou.com
+
+chrome://net-internals/#hsts
+

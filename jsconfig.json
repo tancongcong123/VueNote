@@ -4,6 +4,7 @@
     "module": "esnext",
     "baseUrl": "./",
     "moduleResolution": "node",
+    // 设置src目录的别名
     "paths": {
       "@/*": [
         "src/*"
@@ -15,5 +16,8 @@
       "dom.iterable",
       "scripthost"
     ]
-  }
+  },
+  "exclude": [
+    "node_modules", "dist"
+  ]
 }

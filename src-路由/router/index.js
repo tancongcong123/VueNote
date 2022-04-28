@@ -9,6 +9,20 @@ import News1 from '../pages/News1';
 import News2 from '../pages/News2';
 import Detial from '../pages/Detial';
 
+// 屏蔽重复路由报错
+const originalPush = VueRouter.prototype.push
+VueRouter.prototype.push = function push(location, resolve, reject) {
+    if(resolve && reject){
+        // call和apply的对比
+        // 相同点：都可以调用函数一次，都可以篡改函数的上下文一次
+        // 不同点：call传递参数是用逗号隔开
+        //     apply传递数组
+        originalPush.call(this)
+    }else{
+        originalPush.call(this, location).catch(err => err)
+    }
+}
+
 const router = new VueRouter({
     //路由器的工作模式 
     // 默认hash 路径中存在# 
@@ -101,3 +115,19 @@ router.afterEach((to, _from)=>{
 })
 
 export default router
+
+// 1 路由传递参数（对象写法），path是否可以和params一起使用？
+//     不能，path和name搭配
+// 2 如何指定params参数可传可不传？若果传递的是空串怎么办
+//     path占位后面添加？代表参数可传可不传
+//         {
+//             path:'/search/:keyword?',
+//             component:Search,
+//             meta:{title:'登录'}
+//         }
+//      传递空串会导致路径出现问题，判空使用undefined
+// 3 路由组件可不可以传递props数据
+//         可以，有三种写法
+//         布尔值写法
+//         对象
+//         方法
