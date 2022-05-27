@@ -4,6 +4,7 @@ module.exports = {
       node: true
     },
     parserOptions: {
+      ecmaVersion: 6,
       parser: '@babel/eslint-parser'
     },
     rules: {

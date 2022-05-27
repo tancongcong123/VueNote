@@ -273,8 +273,33 @@
 #### 其他
 
     函数
-        箭头函数没有自己的this，就会向上一级找
+        当我们使用箭头函数的时候，箭头函数会默认帮我们绑定外层 this 的值，所以在箭头函数中 this 的值和外层的 this 是一样的。
+        箭头函数是不能提升的，所以需要在使用之前定义。使用 const 比使用 var 更安全，因为函数表达式始终是一个常量。
         ()函数有自己的this
+        javascript中定义的函数默认属于全局对象,浏览器中的页面对象是浏览器窗口(window 对象)。以上函数会自动变为 window 对象的函数
+        call() 和 apply() 
+            call() 和 apply() 是预定义的函数方法。 两个方法可用于调用函数，两个方法的第一个参数必须是对象本身
+            两者的区别在于第二个参数： apply传入的是一个参数数组，也就是将多个参数组合成为一个数组传入，而call则作为call的参数传入（从第二个参数开始）
+            在 JavaScript 严格模式(strict mode)下, 在调用函数时第一个参数会成为 this 的值， 即使该参数不是一个对象。
+                var person1 = {
+                    fullName: function() {
+                        return this.firstName + " " + this.lastName;
+                    }
+                }
+                var person2 = {
+                    firstName:"John",
+                    lastName: "Doe",
+                }
+                person1.fullName.call(person2);  // 返回 "John Doe" 我们使用 person2 作为参数来调用 person1.fullName 方法时, this 将指向 person2, 即便它是 person1 的方法
+            在 JavaScript 非严格模式(non-strict mode)下, 如果第一个参数的值是 null 或 undefined, 它将使用全局对象替代。
+            function myFunction(a, b) {
+                return a * b;
+            }
+            call
+            myObject = myFunction.call(myObject, 10, 2); 
+            apply
+            myArray = [10, 2];
+            myObject = myFunction.apply(myObject, myArray);  
     Object.defineProperty
         通过Object.defineProperty添加的属性可以控制属性的属性
             enumerable: true, //控制属性是否可以被枚举 默认false不能被枚举（不能遍历获取）
@@ -309,6 +334,7 @@
         3 index作为key使用会引发的问题
             1 若对数据进行比较，会产生没有必要的真实DOM更新，导致效率低
             2 若数据中存在输入，会导致数据错乱
+        
     $nextTick
     函数防抖和节流（解决函数卡顿问题）
         现象：事件频繁触发，每次触发函数都要执行，如果事件太短会导致卡顿
@@ -322,3 +348,29 @@
     图片懒加载插件 vue-lazyload
         https://www.npmjs.com/package/vue-lazyload
     https://github.com/PanJiaChen/vue-admin-template.git
+    promise
+        then方法返回的是一个promise对象,返回值是由返回对象的值确定的,是异步执行的(通过setTimeOut(()=>{})加入队列保证异步执行)
+        1 改变状态
+            resolve => 成功
+            reject => 失败
+            throw抛出异常 => reject 失败
+        2 指定多个回调（设置多个then），回调都会执行
+        3 改变promise状态和制定回调函数谁先谁后？
+            都有可能，正常情况下先指定回调，在改变状态，但也可以反过来
+        4 终止promise链的执行
+            有且只有一种方法：在需要中断的地方，返回一个pending状态的promise对象 
+            return new Promise(()=>{});
+    异步函数 (async function)
+        async function函数中使用await指令，后面必须跟promise对象，函数会在await处停止，等待后面promise对象执行完再执行后面语句
+        promise对象代表一个异步操作，有三种状态：Pending(进行中) Resolve(已完成) Rejected(异常终止)，通过回调里的 resolve(data) 将这个 promise 标记为 resolverd，然后进行下一步 then((data)=>{//do something})，resolve 里的参数就是你要传入 then 的数据
+        async function asyncFunc() {
+            await print(1000, "First");
+            await print(4000, "Second");
+            await print(3000, "Third");
+        }
+        asyncFunc();
+    自调用函数
+        (function () {
+            var x = "Hello!!";      // 我将调用自己
+        })();
+    JSON.parse 和 JSON.stringify
